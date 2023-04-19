@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ReactDOM } from "react";
+// import { ReactDOM } from "react";
 
 export const Buttons = ({ ps, onClick }) => {
     console.log(ps);

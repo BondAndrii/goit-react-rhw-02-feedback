@@ -4,20 +4,43 @@ import { Component } from "react";
 
 import { Buttons } from "components/Buttons/Buttons";
 
+import { Statistics } from "components/Statistics/Statistics";
+
 export class Layout extends Component {
     state = {
-        good: 0,
-        neutral: 0,
-        bad: 0
+        Good: 0,
+        Neutral: 0,
+        Bad: 0,      
     };
-    hendleClick() {
-        console.log("жмяк")
+    
+    handleClick = (evt) => {
+    const { name } = evt.target;
+    // console.log(name);
+    this.setState({ [name]: this.state[name] + 1 })
+    };
+
+    countTotalFeedback() {
+        const { Good, Neutral, Bad } = this.state;
+        const total = Good + Neutral + Bad;
+        console.log(total);
+        return total;        
     }
-    render(){
+    countPositiveFeedbackPercentage() {
+        const { Good} = this.state;
+        const positive = (Good * 100) / this.countTotalFeedback();
+        return positive ? positive : 0 ;
+    }
+    render() {
+        
+       
         return (
-            <>
-                <h2>begin</h2>
-                <Buttons onClick={this.handleClick} ps={this.state } />
+            <>                              
+                <Buttons priClick={this.handleClick} ps={this.state} />                
+                <Statistics
+                    ps={this.state}
+                    total={this.countTotalFeedback()}
+                    positive={this.countPositiveFeedbackPercentage()}
+                    />
             </>
         )
         }

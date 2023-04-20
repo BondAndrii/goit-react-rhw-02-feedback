@@ -1,23 +1,25 @@
 import React from "react";
 
-// import { ReactDOM } from "react";
+import styles from "./Buttons.module.css"
 
-export const Buttons = ({ ps, onClick }) => {
-    console.log(ps);
-    const keys = Object.keys(ps);
-    console.log(keys);
-    console.log(onClick);
+export const Buttons = ({ps, priClick} ) => {    
+    // const keys = Object.keys(ps); 
+    console.log(styles)
+    
     return (
         
         <>
-        <h3>buttons</h3>
-            {keys.map(key => {
-                return (
-                    <li>
-                        <button onClick={onClick} type="button">{ key}</button>
-                    </li>
-                )
-            })}
+            <h2 className={styles.text}>Please leave feedback</h2>
+            <ul className={styles.list}>
+                {Object.keys(ps).map(key => {
+                        return (
+                            <li className={styles.item} key={key}>
+                                <button name={key} type="button" onClick={priClick} >{key}</button>
+                                {/* <span>{ ps[key]}</span> */}
+                            </li>
+                        )
+                })}
+            </ul>
         </>
     )
 }

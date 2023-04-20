@@ -1,0 +1,12 @@
+.list{
+    display: flex;
+    
+    list-style: none;
+}
+.text{
+    color:brown
+}
+.item{
+    display: block;
+    margin-left: 20px;
+}

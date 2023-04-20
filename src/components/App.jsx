@@ -13,7 +13,7 @@ export const App = () => {
       // }}
     >
       <Layout/>
-      Homework 2
+      
     </div>
   );
 };

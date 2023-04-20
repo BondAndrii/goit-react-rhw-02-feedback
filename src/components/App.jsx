@@ -8,6 +8,8 @@ import { Statistics } from "components/Statistics/Statistics";
 
 import { Section } from "./Section/Section";
 
+import { Notification } from "./Notification/Notification";
+
 
 
 export class App extends Component {
@@ -44,12 +46,16 @@ export class App extends Component {
             </Section>
             {/* <Buttons priClick={this.handleClick} ps={this.state} />  */}
             <Section title="Statistics">
-                <Statistics
+              {this.countTotalFeedback() ? <Statistics
                     ps={this.state}
                     total={this.countTotalFeedback()}
                     positive={this.countPositiveFeedbackPercentage()}
-              />
+              /> : 
+               <Notification message="А нема!"/> 
+              }
+                
             </Section>
+            {/* <Notification message="А нема!"/>  */}
             </>
         )
         }

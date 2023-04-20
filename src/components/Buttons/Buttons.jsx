@@ -2,14 +2,11 @@ import React from "react";
 
 import styles from "./Buttons.module.css"
 
-export const Buttons = ({ps, priClick} ) => {    
-    // const keys = Object.keys(ps); 
-    // console.log(styles)
+export const Buttons = ({ps, priClick} ) => {       
     
     return (
         
         <>
-            {/* <h2 className={styles.text}>Please leave feedback</h2> */}
             <ul className={styles.list}>
                 {Object.keys(ps).map(key => {
                         return (

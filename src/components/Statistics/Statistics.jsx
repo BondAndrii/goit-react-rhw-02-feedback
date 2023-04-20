@@ -5,7 +5,7 @@ import styles from "./Statistics.module.css"
 export const Statistics = ({ps, total, positive}) => {
     return (
     <>
-        <h2 className={styles.text}>Statistics</h2>
+        {/* <h2 className={styles.text}>Statistics</h2> */}
             <ul className={styles.list}>
             {Object.keys(ps).map(key => {
                     return (

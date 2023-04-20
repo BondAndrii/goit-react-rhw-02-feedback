@@ -6,6 +6,8 @@ import { Buttons } from "components/Buttons/Buttons";
 
 import { Statistics } from "components/Statistics/Statistics";
 
+import { Section } from "./Section/Section";
+
 
 
 export class App extends Component {
@@ -24,7 +26,7 @@ export class App extends Component {
     countTotalFeedback() {
         const { Good, Neutral, Bad } = this.state;
         const total = Good + Neutral + Bad;
-        console.log(total);
+        // console.log(total);
         return total;        
     }
     countPositiveFeedbackPercentage() {
@@ -36,13 +38,18 @@ export class App extends Component {
         
        
         return (
-            <>                              
-                <Buttons priClick={this.handleClick} ps={this.state} />                
+          <> 
+            <Section title="Please leave feedback">
+              <Buttons priClick={this.handleClick} ps={this.state} /> 
+            </Section>
+            {/* <Buttons priClick={this.handleClick} ps={this.state} />  */}
+            <Section title="Statistics">
                 <Statistics
                     ps={this.state}
                     total={this.countTotalFeedback()}
                     positive={this.countPositiveFeedbackPercentage()}
-                    />
+              />
+            </Section>
             </>
         )
         }

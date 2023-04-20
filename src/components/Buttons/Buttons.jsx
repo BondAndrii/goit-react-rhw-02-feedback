@@ -4,12 +4,12 @@ import styles from "./Buttons.module.css"
 
 export const Buttons = ({ps, priClick} ) => {    
     // const keys = Object.keys(ps); 
-    console.log(styles)
+    // console.log(styles)
     
     return (
         
         <>
-            <h2 className={styles.text}>Please leave feedback</h2>
+            {/* <h2 className={styles.text}>Please leave feedback</h2> */}
             <ul className={styles.list}>
                 {Object.keys(ps).map(key => {
                         return (
